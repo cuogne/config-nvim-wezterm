@@ -7,6 +7,3 @@ vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = t
 
 -- Map <C-r> to compile and run C++ code
 vim.api.nvim_set_keymap("n", "<C-r>", ":w<CR>:!g++ -std=c++23 -o %:r % && ./%:r<CR>", { noremap = true, silent = true }) 
-
--- Set highlight for @field_after_dot with a specific foreground color
-vim.api.nvim_set_hl(0, "@field_after_dot", { fg = "#ff79c6" })

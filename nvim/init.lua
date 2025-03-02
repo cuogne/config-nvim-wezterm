@@ -1,5 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+require("config.colors")
 
 -- Neo-Tree: hiển thị danh sách file và folder như dạng của VSCode
 require("neo-tree").setup({
