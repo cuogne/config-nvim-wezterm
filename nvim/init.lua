@@ -1,8 +1,6 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
-vim.api.nvim_set_keymap("n", "<C-r>", ":w<CR>:!g++ -std=c++23 -o %:r % && ./%:r<CR>", { noremap = true, silent = true })
-
 -- Neo-Tree: hiển thị danh sách file và folder như dạng của VSCode
 require("neo-tree").setup({
   filesystem = {

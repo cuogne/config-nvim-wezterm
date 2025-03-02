@@ -2,6 +2,11 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+-- Map <C-b> to toggle NvimTree
+vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })  
 
-vim.keymap.set("n", "<leader>h", ":Alpha<CR>", { noremap = true, silent = true })
+-- Map <C-r> to compile and run C++ code
+vim.api.nvim_set_keymap("n", "<C-r>", ":w<CR>:!g++ -std=c++23 -o %:r % && ./%:r<CR>", { noremap = true, silent = true }) 
+
+-- Set highlight for @field_after_dot with a specific foreground color
+vim.api.nvim_set_hl(0, "@field_after_dot", { fg = "#ff79c6" })
