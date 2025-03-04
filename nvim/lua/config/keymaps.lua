@@ -25,7 +25,3 @@ function compile_and_run()
 end
 
 vim.api.nvim_set_keymap("n", "<C-r>", ":lua compile_and_run()<CR>", { noremap = true, silent = true })
-
-return {
-    compile_and_run = compile_and_run,
-}
