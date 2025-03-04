@@ -8,7 +8,7 @@ vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = t
 -- -- Map <C-r> to compile and run C++ code
 -- vim.api.nvim_set_keymap("n", "<C-r>", ":w<CR>:!g++ -std=c++23 -o %:r % && ./%:r<CR>", { noremap = true, silent = true }) 
 
-_G.compile_and_run = function()
+function compile_and_run()
     local get_extension = vim.fn.expand("%:e")  -- get file extension of file
 
     if get_extension == "cpp" then -- c++
@@ -20,9 +20,12 @@ _G.compile_and_run = function()
     else
         -- currently for 2 languages: c++ and python
         -- you can change this for multiple languages that you use
-        print("Unsupported file type")
+        print("Unsupported file type: " .. get_extension)
     end
 end
 
-lua compile_and_run()<CR
-vim.api.nvim_set_keymap("n", "<C-r>", ":>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-r>", ":lua compile_and_run()<CR>", { noremap = true, silent = true })
+
+return {
+    compile_and_run = compile_and_run,
+}

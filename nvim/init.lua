@@ -1,6 +1,7 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 require("config.colors")
+require("config.keymaps")  -- Đảm bảo keymaps.lua được load
 
 -- Neo-Tree: hiển thị danh sách file và folder như dạng của VSCode
 require("neo-tree").setup({
